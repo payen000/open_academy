@@ -18,5 +18,6 @@
         'security/ir.model.access.csv',
     ],
     'demo': [
+        'demo/course.xml',
     ],
 }
