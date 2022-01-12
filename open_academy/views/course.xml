@@ -5,10 +5,12 @@
         <field name='arch' type='xml'>
             <form>
                 <sheet>
-                    <group>
-                        <field name='title'/>
-                        <field name='description'/>
-                    </group>
+                    <h1><field name='title'/></h1>
+                    <notebook>
+                        <page string='description'>
+                            <field name="description" placeholder="This is the description of the course"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
