@@ -13,11 +13,13 @@
     'version': '0.1',
     'depends': [
         'base',
+        'contacts',
     ],
     'data': [
         'security/ir.model.access.csv',
         'views/course.xml',
         'views/session.xml',
+        'views/partner.xml',
         'data/ir_ui_menu.xml',
     ],
     'demo': [
