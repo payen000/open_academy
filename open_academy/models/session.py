@@ -11,3 +11,4 @@ class Session(models.Model):
     number_of_seats = fields.Integer()
     instructor_id = fields.Many2one('res.partner')
     course_id = fields.Many2one('course', required=True)
+    attendee_ids = fields.Many2many('res.partner')
