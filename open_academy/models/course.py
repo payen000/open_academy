@@ -5,6 +5,6 @@ class Course(models.Model):
     _name = 'course'
     _description = 'Course'
 
-    title = fields.Char(required = True)
+    title = fields.Char(required=True)
     description = fields.Text()
-
+    responsible_user_id = fields.Many2one('res.users')
