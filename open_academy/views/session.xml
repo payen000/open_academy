@@ -40,9 +40,27 @@
         </field>
     </record>
 
+    <record id='session_view_calendar' model='ir.ui.view'>
+        <field name='name'>session.view.calendar</field>
+        <field name='model'>session</field>
+        <field name='arch' type='xml'>
+            <calendar string='name' date_start='start_date' date_stop='stop_date' color='course_id'>
+                <field name='active'/>
+                <field name='name'/>
+                <field name='course_id'/>
+                <field name='instructor_id'/>
+                <field name='start_date'/>
+                <field name='stop_date'/>
+                <field name='duration' widget='float_time'/>
+                <field name='number_of_seats'/>
+                <field name='taken_seats_percentage' widget="progressbar"/>
+            </calendar>
+        </field>
+    </record>
+
     <record id='session_action_display_view' model='ir.actions.act_window'>
         <field name='name'>Session</field>
         <field name='res_model'>session</field>
-        <field name='view_mode'>tree,form</field>
+        <field name='view_mode'>tree,calendar,form</field>
     </record>
 </odoo>
