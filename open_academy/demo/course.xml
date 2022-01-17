@@ -1,10 +1,12 @@
 <odoo>
     <record id='course_demo1' model='course'>
         <field name='title'>Python Course</field>
+        <field name='name'>Python Course</field>
     </record>
 
     <record id='course_demo2' model='course'>
         <field name='title'>Odoo Course</field>
+        <field name='name'>Odoo Course</field>
         <field name='description'>This is the course's description.</field>
     </record>
 </odoo>

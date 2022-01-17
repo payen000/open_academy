@@ -6,6 +6,7 @@
             <form>
                 <sheet>
                     <h1><field name='title'/></h1>
+                    <field name='responsible_user_id' placeholder='Responsible User'/>
                     <notebook>
                         <page string='description'>
                             <field name="description" placeholder="This is the description of the course"/>
@@ -28,13 +29,18 @@
         </field>
     </record>
 
-    <record id='course_view_search' model="ir.ui.view">
-        <field name="name">course.view.search</field>
-        <field name="model">course</field>
-        <field name="arch" type="xml">
+    <record id='course_view_search' model='ir.ui.view'>
+        <field name='name'>course.view.search</field>
+        <field name='model'>course</field>
+        <field name='arch' type='xml'>
             <search>
-                <field name="title"/>
-                <field name="description"/>
+                <field name='title'/>
+                <field name='description'/>
+
+                <filter name='responsible_user_id' domain='[("responsible_user_id","=", uid)]'/>
+                <group string='Group By'>
+                    <filter name='group_by_responsible_user' context='{"group_by": "responsible_user_id"}'/>
+                </group>
             </search>
         </field>
     </record>
