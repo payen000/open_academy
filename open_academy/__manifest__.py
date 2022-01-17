@@ -3,14 +3,11 @@
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
         subtitle on modules listing or apps.openerp.com""",
-    'description': """
-        Long description of module's purpose
-    """,
-    'author': "My Company",
+    'author': "Vauxoo",
     'website': "http://www.yourcompany.com",
     'category': 'Uncategorized',
     'license': 'LGPL-3',
-    'version': '0.1',
+    'version': '15.0.0.0.0',
     'depends': [
         'base',
         'contacts',
