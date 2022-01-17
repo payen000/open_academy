@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class Session(models.Model):
@@ -44,3 +45,10 @@ class Session(models.Model):
                     'message': ' '.join(warning_message),
                 }
             }
+
+    @api.constrains('attendee_ids', 'instructor_id')
+    def _check_instructor_id_in_attendee_ids(self):
+        for record in self:
+            if record.instructor_id in record.attendee_ids:
+                error_message = _('Instructor cannot be an attendee for their own session!')
+                raise ValidationError(error_message)
