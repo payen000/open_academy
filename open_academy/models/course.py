@@ -5,7 +5,8 @@ class Course(models.Model):
     _name = 'course'
     _description = 'Course'
 
-    title = fields.Char(required=True)
+    name = fields.Char(required=True)
+    title = fields.Char(required=True, copy=False)
     description = fields.Text()
     responsible_user_id = fields.Many2one('res.users')
     session_ids = fields.One2many('session', 'course_id')
@@ -21,3 +22,11 @@ class Course(models.Model):
             'The course name must be unique!'
         ),
     ]
+
+    def copy(self):
+        new_title = f'copy of [{self.title}]'
+        count = self.search_count([('title', 'like', new_title), ])
+        new_title += f' ({count})' if count > 0 else ''
+        default = {'title': new_title, }
+
+        return super().copy(default=default)
