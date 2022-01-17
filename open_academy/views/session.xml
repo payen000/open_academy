@@ -3,15 +3,16 @@
         <field name='name'>session.view.tree</field>
         <field name='model'>session</field>
         <field name='arch' type='xml'>
-            <tree>
+            <tree decoration-info='lasting_days&lt;5' decoration-danger='lasting_days&gt;15'>
                 <field name='active'/>
                 <field name='course_id'/>
                 <field name='instructor_id'/>
                 <field name='start_date'/>
+                <field name='lasting_days'/>
                 <field name='duration' widget='float_time'/>
                 <field name='number_of_seats'/>
                 <field name='attendee_ids'/>
-                <field name='taken_seats_percentage' widget="progressbar"/>
+                <field name='taken_seats_percentage' widget='progressbar'/>
             </tree>
         </field>
     </record>
@@ -28,10 +29,11 @@
                         <field name='course_id'/>
                         <field name='instructor_id'/>
                         <field name='start_date'/>
+                        <field name='stop_date'/>
                         <field name='duration' widget='float_time'/>
                         <field name='number_of_seats'/>
                         <field name='attendee_ids'/>
-                        <field name='taken_seats_percentage' widget="progressbar"/>
+                        <field name='taken_seats_percentage' widget='progressbar'/>
                     </group>
                 </sheet>
             </form>

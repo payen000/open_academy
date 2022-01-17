@@ -1,24 +1,45 @@
 <odoo>
     <record id='session_demo1' model='session'>
         <field name='name'>Session 1</field>
-        <field name='start_date'>2022-01-07</field>
         <field name='duration'>2.5</field>
+        <field name='start_date'>2022-01-07</field>
+        <field name='stop_date'>2022-01-09</field>
         <field name='number_of_seats'>20</field>
         <field name='course_id' ref='course_demo1'/>
     </record>
 
     <record id='session_demo2' model='session'>
         <field name='name'>Session 2</field>
-        <field name='start_date'>2022-01-10</field>
         <field name='duration'>3.5</field>
+        <field name='start_date'>2022-01-10</field>
+        <field name='stop_date'>2022-01-13</field>
         <field name='number_of_seats'>22</field>
         <field name='course_id' ref='course_demo1'/>
     </record>
 
     <record id='session_demo3' model='session'>
         <field name='name'>Session 3</field>
-        <field name='start_date'>2022-01-11</field>
         <field name='duration'>4.5</field>
+        <field name='start_date'>2022-01-11</field>
+        <field name='stop_date'>2022-01-16</field>
+        <field name='number_of_seats'>19</field>
+        <field name='course_id' ref='course_demo2'/>
+    </record>
+
+    <record id='session_demo4' model='session'>
+        <field name='name'>Session 4</field>
+        <field name='duration'>3.5</field>
+        <field name='start_date'>2022-01-12</field>
+        <field name='stop_date'>2022-01-20</field>
+        <field name='number_of_seats'>19</field>
+        <field name='course_id' ref='course_demo2'/>
+    </record>
+
+    <record id='session_demo5' model='session'>
+        <field name='name'>Session 5</field>
+        <field name='duration'>6.5</field>
+        <field name='start_date'>2022-01-13</field>
+        <field name='stop_date'>2022-01-29</field>
         <field name='number_of_seats'>19</field>
         <field name='course_id' ref='course_demo2'/>
     </record>

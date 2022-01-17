@@ -1,5 +1,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
+from datetime import datetime
 
 
 class Session(models.Model):
@@ -8,6 +9,8 @@ class Session(models.Model):
 
     name = fields.Char(required=True)
     start_date = fields.Date(default=fields.Date.today)
+    stop_date = fields.Date()
+    lasting_days = fields.Integer(compute='_compute_lasting_days')
     active = fields.Boolean(default=True)
     duration = fields.Float()
     number_of_seats = fields.Integer()
@@ -52,3 +55,13 @@ class Session(models.Model):
             if record.instructor_id in record.attendee_ids:
                 error_message = _('Instructor cannot be an attendee for their own session!')
                 raise ValidationError(error_message)
+
+    @api.depends('start_date', 'stop_date')
+    def _compute_lasting_days(self):
+        for record in self:
+            fmt = '%Y-%m-%d'
+            start_date = str(record.start_date)
+            stop_date = str(record.stop_date)
+            d1 = datetime.strptime(start_date, fmt)
+            d2 = datetime.strptime(stop_date, fmt)
+            record.lasting_days = (d2 - d1).days
