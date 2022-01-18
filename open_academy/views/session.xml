@@ -66,9 +66,20 @@
         </field>
     </record>
 
+    <record id='session_view_graph' model='ir.ui.view'>
+        <field name='name'>session.view.graph</field>
+        <field name='model'>session</field>
+        <field name='arch' type='xml'>
+            <graph string='Attendee count per course'>
+                <field name='course_id'/>
+                <field name='attendee_count' type='measure'/>
+            </graph>
+        </field>
+    </record>
+
     <record id='session_action_display_view' model='ir.actions.act_window'>
         <field name='name'>Session</field>
         <field name='res_model'>session</field>
-        <field name='view_mode'>tree,calendar,gantt,form</field>
+        <field name='view_mode'>tree,calendar,gantt,form,graph</field>
     </record>
 </odoo>
