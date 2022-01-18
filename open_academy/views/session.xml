@@ -58,9 +58,17 @@
         </field>
     </record>
 
+    <record id='session_view_gantt' model='ir.ui.view'>
+        <field name='name'>session.view.gantt</field>
+        <field name='model'>session</field>
+        <field name='arch' type='xml'>
+            <gantt string="Sessions by Instructor" date_start="start_date" date_stop="stop_date" progress="taken_seats_percentage" default_group_by="instructor_id"/>
+        </field>
+    </record>
+
     <record id='session_action_display_view' model='ir.actions.act_window'>
         <field name='name'>Session</field>
         <field name='res_model'>session</field>
-        <field name='view_mode'>tree,calendar,form</field>
+        <field name='view_mode'>tree,calendar,gantt,form</field>
     </record>
 </odoo>
