@@ -2,4 +2,8 @@
     <record id='open_academy_session_read' model='res.groups'>
         <field name='name'>OpenAcademy / Session Read</field>
     </record>
+    
+    <record id='open_academy_manager' model='res.groups'>
+        <field name='name'>OpenAcademy / Manager</field>
+    </record>
 </odoo>
