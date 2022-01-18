@@ -19,8 +19,9 @@ class Session(models.Model):
     )
     course_id = fields.Many2one('course', required=True)
     attendee_ids = fields.Many2many('res.partner')
-    taken_seats_percentage = fields.Char('Taken Seats %', compute='_compute_taken_seats_percentage')
+    taken_seats_percentage = fields.Integer('Taken Seats %', compute='_compute_taken_seats_percentage')
     attendee_count = fields.Integer(compute='_compute_attendee_count', store=True)
+    available_seats = fields.Integer(compute='_compute_available_seats', store=True)
 
     @api.depends('attendee_ids', 'number_of_seats')
     def _compute_taken_seats_percentage(self):
@@ -71,3 +72,8 @@ class Session(models.Model):
     def _compute_attendee_count(self):
         for record in self:
             record.attendee_count = len(record.attendee_ids)
+
+    @api.depends('attendee_ids', 'number_of_seats')
+    def _compute_available_seats(self):
+        for record in self:
+            record.available_seats = record.number_of_seats - len(record.attendee_ids)
