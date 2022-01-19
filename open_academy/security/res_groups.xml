@@ -1,0 +1,5 @@
+<odoo>
+    <record id='open_academy_session_read' model='res.groups'>
+        <field name='name'>OpenAcademy / Session Read</field>
+    </record>
+</odoo>

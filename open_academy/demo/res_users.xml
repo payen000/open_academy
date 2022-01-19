@@ -1,0 +1,10 @@
+<odoo> 
+    <record id='john_smith' model='res.users' context='{"no_reset_password": True}'>
+        <field name='login'>john_smith</field>
+        <field name='password'>john_smith</field>
+        <field name='name'>John Smith</field>
+        <field name='email'>john@smith.com</field>
+        <field name='active'>True</field>
+        <field name='groups_id' eval='[(6,0,[ref("base.group_user"), ref("open_academy_session_read")])]'/>
+    </record>
+</odoo>

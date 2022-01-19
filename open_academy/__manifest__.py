@@ -13,6 +13,7 @@
         'contacts',
     ],
     'data': [
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
         'views/course.xml',
         'views/session.xml',
@@ -23,5 +24,6 @@
         'demo/course.xml',
         'demo/session.xml',
         'demo/category.xml',
+        'demo/res_users.xml',
     ],
 }
