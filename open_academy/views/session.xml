@@ -5,6 +5,7 @@
         <field name='arch' type='xml'>
             <tree decoration-info='lasting_days&lt;5' decoration-danger='lasting_days&gt;15'>
                 <field name='active'/>
+                <field name='name'/>
                 <field name='course_id'/>
                 <field name='instructor_id'/>
                 <field name='start_date'/>
