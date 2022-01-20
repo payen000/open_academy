@@ -6,6 +6,11 @@
             <form>
                 <field name='session_id'/>
                 <field name='attendee_ids'/>
+
+                <footer>
+                    <button string='Register Attendees' name='action_register_attendees' class='btn-info' type='object' data-hotkey='v'/>
+                    <button string='Cancel' class='btn-danger' special='cancel' data-hotkey='z'/>
+                </footer>
             </form>
         </field>
     </record>
