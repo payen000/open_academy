@@ -16,6 +16,7 @@
         'security/res_groups.xml',
         'security/ir_rule.xml',
         'security/ir.model.access.csv',
+        'wizards/assign_attendee_sessions_views.xml',
         'views/course.xml',
         'views/session.xml',
         'views/partner.xml',
