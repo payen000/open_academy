@@ -4,7 +4,7 @@
         <field name='model'>assign.attendee.sessions</field>
         <field name='arch' type='xml'>
             <form>
-                <field name='session_id'/>
+                <field name='session_ids'/>
                 <field name='attendee_ids'/>
 
                 <footer>
@@ -23,6 +23,6 @@
         <field name='view_id' ref='assign_attendee_sessions_view_form'/>
         <field name='target'>new</field>
         <field name='binding_model_id' ref='model_session'/>
-        <field name='context'>{'default_session_id': active_id,}</field>
+        <field name='context'>{'default_session_ids': [(6, False, active_ids)],}</field>
     </record>
 </odoo>
