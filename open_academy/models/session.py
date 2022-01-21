@@ -46,7 +46,7 @@ class Session(models.Model):
         if warning_message:
             return {
                 'warning': {
-                    'title': 'Error in number of seats or attendees',
+                    'title': _('Error in number of seats or attendees'),
                     'message': ' '.join(warning_message),
                 }
             }

@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class Course(models.Model):
@@ -14,12 +14,12 @@ class Course(models.Model):
         (
             'description',
             'CHECK(title != description)',
-            'The course title and the course description must be different!'
+            _('The course title and the course description must be different!')
         ),
         (
             'title',
             'UNIQUE(title)',
-            'The course name must be unique!'
+            _('The course name must be unique!')
         ),
     ]
 
