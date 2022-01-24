@@ -11,6 +11,7 @@
     'depends': [
         'base',
         'contacts',
+        'board',
     ],
     'data': [
         'security/res_groups.xml',
@@ -21,6 +22,7 @@
         'views/session.xml',
         'views/partner.xml',
         'views/report_session.xml',
+        'views/dashboard.xml',
         'data/ir_ui_menu.xml',
     ],
     'demo': [
