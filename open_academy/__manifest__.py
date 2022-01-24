@@ -20,6 +20,7 @@
         'views/course.xml',
         'views/session.xml',
         'views/partner.xml',
+        'views/report_session.xml',
         'data/ir_ui_menu.xml',
     ],
     'demo': [
