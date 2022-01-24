@@ -45,7 +45,7 @@
         <field name='name'>session.view.calendar</field>
         <field name='model'>session</field>
         <field name='arch' type='xml'>
-            <calendar string='name' date_start='start_date' date_stop='stop_date' color='course_id'>
+            <calendar string='name' date_start='start_date' date_stop='stop_date' color='course_id' mode='month'>
                 <field name='active'/>
                 <field name='name'/>
                 <field name='course_id'/>
