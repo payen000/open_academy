@@ -1,0 +1,55 @@
+<odoo>
+    <record id='report_session_view' model='ir.actions.report'>
+        <field name='name'>Open Academy Session Report</field>
+        <field name='model'>session</field>
+        <field name='report_type'>qweb-html</field>
+        <field name='report_name'>open_academy.report_session</field>
+        <field name='report_file'>report_session</field>
+        <field name='binding_model_id' ref='model_session'/>
+        <field name='binding_type'>report</field>
+    </record>
+
+    <template id='open_academy.report_session'>
+        <t t-call='web.html_container'>
+            <t t-foreach='docs' t-as='session'>
+                <t t-call='web.external_layout'>
+                    <div class='page container'>
+                        <div style='margin-bottom: 1em;'>
+                            <h2 style='font-size: 2em;'><span t-field='session.name'/></h2>
+                        </div>
+                        <div style='margin-bottom: 1em'>
+                            <div class='row'>
+                                <div class='col-3'><span>From: </span></div>
+                                <div class='col-3'><span t-field='session.start_date'/></div>
+                                <div class='col-6'></div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-3'><span>To: </span></div>
+                                <div class='col-3'><span t-field='session.stop_date'/></div>
+                                <div class='col-6'></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style='font-size: 1.25em;'>Attendees</h3>
+                            <div class='row' style='border-bottom: solid 1px black; padding: 0.5em 0 0.5em 0;'>
+                                <div class='col-3'><strong>Name</strong></div>
+                                <div class='col-3'><strong>Phone</strong></div>
+                                <div class='col-4'><strong>Email</strong></div>
+                                <div class='col-2'><strong>Country</strong></div>
+                            </div>
+                            <t t-foreach='session.attendee_ids' t-as='attendee'>
+                                <div class='row' style='border-top: solid 1px #c3c8c9; padding: 0.5em 0 0.5em 0; background-color: #fbfdff;'>
+                                    <div class='col-3'><span t-field='attendee.name'/></div>
+                                    <div class='col-3'><span t-field='attendee.phone'/></div>
+                                    <div class='col-4'><span t-field='attendee.email'/></div>
+                                    <div class='col-2'><span t-field='attendee.country_id'/></div>
+                                </div>
+                            </t>
+                            <div class='row' style='border-bottom: solid 1px black;'></div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
