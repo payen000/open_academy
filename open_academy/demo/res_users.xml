@@ -7,4 +7,13 @@
         <field name='active'>True</field>
         <field name='groups_id' eval='[(6,0,[ref("base.group_user"), ref("open_academy_session_read")])]'/>
     </record>
+
+    <record id='payen' model='res.users' context='{"no_reset_password": True}'>
+        <field name='login'>payen</field>
+        <field name='password'>payen</field>
+        <field name='name'>payen</field>
+        <field name='email'>payen@payen.payen</field>
+        <field name='active'>True</field>
+        <field name='groups_id' eval='[(6,0,[ref("base.group_user"), ref("open_academy_manager")])]'/>
+    </record>
 </odoo>
