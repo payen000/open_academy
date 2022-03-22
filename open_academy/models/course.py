@@ -30,3 +30,6 @@ class Course(models.Model):
         default = {'title': new_title, }
 
         return super().copy(default=default)
+
+
+
